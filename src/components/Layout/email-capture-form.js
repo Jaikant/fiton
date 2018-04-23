@@ -139,7 +139,7 @@ class EmailCaptureHomePage extends React.Component {
                     &:focus {
                       border-color: presets.colors.lilac;
                       outline: 0;
-                      box-shadow: 0 0 0 0.2rem ${hex2rgba(presets.colors.primary, 0.25)};
+                      box-shadow: 0 0 0 0.2rem ${hex2rgba(colors.tech47pinkhex, 0.25)};
                     }
                   `}
                 />
@@ -164,7 +164,7 @@ class EmailCaptureHomePage extends React.Component {
                     &:focus {
                       outline: 0;
                       box-shadow: 0 0 0 0.2rem ${hex2rgba(
-                        presets.colors.primary,
+                        colors.tech47pinkhex,
                         0.25
                       )}
                     };
