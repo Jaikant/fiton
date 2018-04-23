@@ -69,27 +69,8 @@ const colors = {
   tech47pinkhex: `#FC38A7`,
   tech47background: `rgba(243, 246, 250)`,
   tech47white: '#ffffff',
-  lilac: `#9D7CBF`,
-  // accent color from the "bolder palette" by @ArchieHicklin
-  // @see https://github.com/gatsbyjs/gatsby/issues/1173#issuecomment-309415650
-  accent: `#0f0f0f`, // "Mustard",
-  success: `#37b635`,
-  warning: `#ec1818`,
-  primary: '#0f0f0f',
-  secondary: '#000000',
-  third: '#ffffff',
-  fourth: '#0f0f0f',
-  fifth: '#FFFFFF', // For front page - Navigation, Service cards
-  sixth: '#0f0f0f',
-  light: '#c0c0c0',
-  linkcolor: '#0033CC',
-  linkvisited: '#663399',
-
-  ui: {
-    bright: `#e0d6eb`,
-    light: `#f5f3f7`,
-    whisper: `#fbfafc`
-  },
+  tech47dummy: `red`, 
+  tech47dummyhex: `#ff0000`, 
   gray: {
     dark: gray(8, 270),
     copy: gray(12, 270),

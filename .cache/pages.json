@@ -1,0 +1,114 @@
+[
+    {
+        "componentChunkName": "component---src-templates-tags-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "tags.json",
+        "path": "/tags"
+    },
+    {
+        "componentChunkName": "component---src-templates-tags-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "tags-serverless.json",
+        "path": "/tags/SERVERLESS"
+    },
+    {
+        "componentChunkName": "component---src-templates-tags-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "tags-fullstack.json",
+        "path": "/tags/FULLSTACK"
+    },
+    {
+        "componentChunkName": "component---src-templates-tags-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "tags-websites.json",
+        "path": "/tags/WEBSITES"
+    },
+    {
+        "componentChunkName": "component---src-templates-tags-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "tags-cloud.json",
+        "path": "/tags/CLOUD"
+    },
+    {
+        "componentChunkName": "component---src-templates-blogcontentful-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "index.json",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "blog-publishing-platform-tech.json",
+        "path": "/blog/publishing-platform-tech"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "responsive-images.json",
+        "path": "/responsive-images"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "reactjs-static-website-disruptions.json",
+        "path": "/reactjs-static-website-disruptions"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "blog-sherpafeet.json",
+        "path": "/blog/sherpafeet"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "blog-social-good.json",
+        "path": "/blog/social-good"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "blog-aws-code-deploy.json",
+        "path": "/blog/aws-code-deploy"
+    },
+    {
+        "componentChunkName": "component---src-templates-contentful-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "blog-build-blog-gatsbyjs.json",
+        "path": "/blog/build-blog-gatsbyjs"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "dev-404-page.json",
+        "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "component---src-pages-404-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "404.json",
+        "path": "/404/"
+    },
+    {
+        "componentChunkName": "component---src-pages-404-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "404-html.json",
+        "path": "/404.html"
+    }
+]

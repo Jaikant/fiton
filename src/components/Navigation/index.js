@@ -18,7 +18,7 @@ const svgStyles = css`
   &:hover {
     text-decoration: none;
     box-shadow: none;
-    color: ${colors.fifth};
+    color: ${colors.tech47white};
     transition: background-color 0.15s ease-in;
   }
 `;
@@ -147,7 +147,7 @@ const dropDownItemStyle = css`
   & a {
     transition: color 0.15s ease-in;
     transition: background 0.15s ease-in;
-    color: ${colors.tech47blue};
+    color: ${colors.tech47white};
     font-weight: normal;
     line-height: 1.3em;
     padding: 12px 16px;
@@ -159,7 +159,6 @@ const dropDownItemStyle = css`
 
   & a:hover {
     background: ${colors.tech47purple};
-    color: ${colors.fifth};
     transition: color 0.15s ease-in;
     transition: background 0.15s ease-in;
   }
@@ -362,7 +361,7 @@ class Navigation extends Component {
       })
     }
   }
-  
+
   toggleNav() {
     if (this.state.mobileActive) {
       this.setState({ mobileActive: false });
@@ -375,7 +374,7 @@ class Navigation extends Component {
     const { isScrolled } = this.state;
     const isRootPath = this.props.location.pathname === '/';
     const shouldBeHide = isRootPath && !isScrolled;
-    
+
     const desktopNav = css`
       ${basicNav};
       background: ${shouldBeHide ? 'transparent' : 'rgba(173,60,203,1)'};
@@ -391,7 +390,7 @@ class Navigation extends Component {
         display: flex;
       `};
     `;
-    
+
     // Menu Style
     const menuStyle = css`
       list-style-type: none;
@@ -418,7 +417,7 @@ class Navigation extends Component {
         )}
       </ul>
     );
-    
+
     return (
       <nav>
         <Box className={desktopNav}>

@@ -27,7 +27,7 @@ const formInputDefaultStyles = css`
   border-radius: 20px;
   width: 100%;
   font-size: 0.8em;
-  color: ${colors.primary};
+  color: ${colors.tech47dummy};
   padding: ${rhythm(1 / 5)};
   padding-left: ${rhythm(1)};
   vertical-align: middle;
@@ -171,7 +171,7 @@ class EmailCaptureForm extends React.Component {
                     &:focus {
                       outline: 0;
                       box-shadow: 0 0 0 0.2rem ${hex2rgba(
-                        colors.primary,
+                        colors.tech47dummyhex,
                         0.25
                       )}
                     };

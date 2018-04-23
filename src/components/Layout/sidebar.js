@@ -1,15 +1,12 @@
 /* eslint-disable */
 import React from 'react';
 import Link from 'gatsby-link';
-import { Box, Flex, Tags, EmailCaptureHomePage, ServiceCard } from '.';
+import { Box, Flex, Tags, EmailCaptureHomePage } from '.';
 import FaLongArrowRight from 'react-icons/lib/fa/long-arrow-right';
 import Img from 'gatsby-image';
 import styled, { css, keyframes } from 'react-emotion';
 import colors from '../../utils/colors';
 import media from '../../utils/media';
-import about from '../../pages/images/idea.svg';
-import serverless from '../../pages/images/blackboard.svg';
-import reactsvg from '../../pages/images/space-ship.svg';
 
 const SidebarCard = styled.div`
   background-color: ${colors.tech47white};
@@ -99,35 +96,14 @@ const SideBar = ({ group, first, last, previousUrl, nextUrl }) => {
             </div>
           </SidebarCard>
           <SidebarCard>
-              <ServiceCard
-                name="DEVELOPMENT"
-                image={reactsvg}
-                service="We build modern websites and apps on the cloud, using Reactjs, GraphQL and other modern web technologies"
-                url="/development"
-                urltext="More Info"
-              />
+             <p> ... </p> 
           </SidebarCard>
           <SidebarCard>
-            <ServiceCard
-              name="CONSULTING"
-              image={about}
-              service="Architect your technology to save money. Scale seamlessly using JAMStack, micro services & AWS Cloud."
-              url="/consulting"
-              urltext="More Info"
-            />
+             <p> ... </p> 
           </SidebarCard>
           <SidebarCard>
-            <ServiceCard
-              name="TRAINING"
-              image={serverless}
-              service="We can help teaching you ReactJs, NodeJs, MongoDb, GraphQL ..."
-              url="/training"
-              urltext="More Info"
-            />
+             <p> ... </p> 
           </SidebarCard>
-
-            <ul className={imgStyle}>
-          </ul>
       </Flex>
     </div>
   );

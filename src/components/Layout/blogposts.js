@@ -93,12 +93,7 @@ const StyledSpan = styled.span`
 
 const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
   return (
-    <div css={`
-          -ms-transform: translate(0px, -16vh);
-          -webkit-transform: translate(0px, -16vh);
-          transform: translate(0px, -16vh);
-      `}
-    >
+     <div>
       <div css={`
               display: flex;
               flex-wrap: wrap;
@@ -179,7 +174,7 @@ const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
             </div>
           </div>
         </div>
-    </div>
+      </div>
   );
 };
 
