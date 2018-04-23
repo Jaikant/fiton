@@ -1,4 +1,4 @@
-# Blog Starter for tech47.in (https://tech47.in)
+# www for fiton
 
 Built using 
 [GatsbyJS](https://github.com/gatsbyjs/gatsby).
@@ -10,4 +10,3 @@ Built using
 * Typography and typefaces 
 * Eslint in dev mode with the airbnb config and prettier formatting rules.
 * [Prettier](https://github.com/prettier/prettier) for a uniform codebase.
-* [Feather](https://feather.netlify.com/) icons.

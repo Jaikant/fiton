@@ -34,16 +34,21 @@ const outerstyle = css`
 `;
 
 const menuConfig = [
+  { title: 'ABOUT', url: '/about', submenu: false },
   {
-    title: 'SERVICES',
+    title: 'SPORTS',
     url: [
-      { title: 'Serverless Apps', url: '/serverless' },
-      { title: 'Fullstack', url: '/fullstack' },
-      { title: 'AWS Cloud', url: '/aws' }
+      { title: 'BADMINTON', url: '/serverless' },
+      { title: 'FOOTBALL', url: '/fullstack' },
+      { title: 'SKATING', url: '/aws' },
+      { title: 'SWIMMING', url: '/aws' },
+      { title: 'BASKETBALL', url: '/aws' },
     ],
     submenu: true
   },
-  { title: 'ABOUT', url: '/about', submenu: false },
+  { title: 'MEMBERSHIP', url: '/Contact', submenu: false },
+  { title: 'COACHING', url: '/Contact', submenu: false },
+  { title: 'NEWS', url: '/Contact', submenu: false },
   { title: 'CONTACT', url: '/Contact', submenu: false },
 ];
 
@@ -139,7 +144,7 @@ SubMenuMobile.propTypes = {
 const dropDownItemStyle = css`
   display: block;
   position: absolute;
-  background-color: ${colors.fifth};
+  background-color: ${colors.tech47purple};
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -158,7 +163,7 @@ const dropDownItemStyle = css`
   }
 
   & a:hover {
-    background: ${colors.tech47purple};
+    background: ${colors.tech47pink};
     transition: color 0.15s ease-in;
     transition: background 0.15s ease-in;
   }
@@ -279,30 +284,10 @@ const basicNav = css`
   height: 3.5rem;
 `;
 
-// Styles for the mobile View of the navigation
-// the margin within the div below sets the svg menu bar distance from the right end.
-const mobileNav = css`
-  ${basicNav};
-
-  & div {
-    margin: 0px 16px 0px auto;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  & div img {
-    display: block;
-    margin: auto;
-  }
-  ${media.mid`
-    display: none;
-  `};
-`;
-
 // Styles for the overlay which pops up, when the menu is clicked
 const mobileStyle = css`
   position: fixed;
-  background-color: ${colors.fifth};
+  background-color: ${colors.tech47background};
   color: ${colors.primary};
   display: block;
   padding: 1rem;
@@ -348,8 +333,6 @@ class Navigation extends Component {
     const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
     const css1compatY = isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
     const scrollY = supportPageOffset ? window.pageYOffset : css1compatY;
-    console.log("The value of Y is ", scrollY);
-    console.log("The state is ", this.state.isScrolled);
 
     if (scrollY > JUDGE_POSITION_Y) {
       this.setState({
@@ -391,12 +374,36 @@ class Navigation extends Component {
       `};
     `;
 
+    // Styles for the mobile View of the navigation
+    // the margin within the div below sets the svg menu bar distance from the right end.
+    const mobileNav = css`
+      ${basicNav};
+      background: ${shouldBeHide ? 'transparent' : colors.tech47purple};
+      transition: background 0.3s ease-out;
+      box-shadow: ${shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)'};
+      border-top: 4px solid ${colors.tech47pink};
+
+      & div {
+        margin: 0px 16px 0px auto;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      & div img {
+        display: block;
+        margin: auto;
+      }
+      ${media.mid`
+        display: none;
+      `};
+    `;
+
     // Menu Style
     const menuStyle = css`
       list-style-type: none;
       display: flex;
       margin: 0;
-      width: 33%;
+      width: 50%;
       font-size: 0.65em;
       font-weight: 100;
       color: ${shouldBeHide ? `rgba(255,255,255,1)` : `white`};
@@ -445,9 +452,8 @@ class Navigation extends Component {
           >
             <img
               className={logoClass}
-              width={160}
               height={40}
-              src={this.props.logo}
+              src={this.props.logoWhite}
               alt="Tech47 Logo"
             />
           </Link>
@@ -464,7 +470,7 @@ class Navigation extends Component {
           <MobileNav
             toggleNav={this.toggleNav}
             mobileStyle={mobileStyle}
-            logo={this.props.logo}
+            logo={this.props.logoWhite}
           >
             <MenuMobile toggleNav={this.toggleNav} />
           </MobileNav>
@@ -475,7 +481,6 @@ class Navigation extends Component {
 }
 
 Navigation.propTypes = {
-  logo: PropTypes.string.isRequired,
   logoWhite: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired
 };

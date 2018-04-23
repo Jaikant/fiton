@@ -31,7 +31,7 @@
     "gatsby-transformer-json": "^1.0.11",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.10",
-    "gatsby-transformer-yaml": "^1.5.11",
+    "gatsby-transformer-yaml": "^1.5.16",
     "gray-percentage": "^2.0.0",
     "hex2rgba": "0.0.1",
     "jsonp": "^0.2.1",

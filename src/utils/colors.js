@@ -59,15 +59,18 @@ const colors = {
   // @see https://www.figma.com/file/J6IYJEtdRmwJQOrcZ2DfvxDD/Gatsby
   tech47: `#663399`, // was #744c9e
   // primary color
-  tech47blue: `rgba(32, 150, 186, 1)`,
+  tech47blue: `rgba(55, 26, 29, 1)`,
   // Secondary color
-  tech47purple: `rgba(223, 110, 33, 1)`,
-  tech47purplehex: `#df6e21`,
+  // tech47purple: `rgba(218, 159, 126, 1)`,
+  tech47purple: `rgba(55, 26, 29, 1)`,
+  tech47purplehex: `#371a1d`,
   // Tertiary color
-  tech47pink: `rgba(207, 145, 157, 1)`,
-  tech47pinkhex: `#cf919d`,
-  tech47category: `rgba(231, 177, 131, 1)`,
-  tech47categoryhover: `rgba(231, 177, 131, 0.5)`,
+  tech47dropDown: `rgba(75, 49, 24, 1)`,
+  tech47dropDownhex: `#4b3118`,
+  tech47pink: `rgba(113, 16, 59, 1)`,
+  tech47pinkhex: `#71103b`,
+  tech47category: `rgba(226, 172, 155, 1)`,
+  tech47categoryhover: `rgba(226, 172, 155, 0.5)`,
   tech47hover: `rgba(255, 255, 255, 0.5)`,
   tech47date: `#d1d1d1`,
   tech47background: `rgba(243, 246, 250)`,

@@ -34,7 +34,7 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6 {
     color: ${colors.secondary}
   };
-`; 
+`;
 /* eslint-enable */
 const MainDiv = styled.div`
   width: 100%;
@@ -47,8 +47,8 @@ const Layout = ({ children, location, data }) => (
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       <link rel="icon" href={favicon} type="image/x-icon" />
     </Helmet>
-    <Navigation 
-      title={data.site.siteMetadata.title} 
+    <Navigation
+      title={data.site.siteMetadata.title}
       logo={data.logoImage.resize.src}
       logoWhite={data.logoWhite.resize.src}
       location={location}
@@ -90,8 +90,8 @@ export const query = graphql`
         src
       }
     }
-    logoWhite: imageSharp(id: { regex: "/Htech47-white/" }) {
-      resize(width: 1843, height: 425, cropFocus: CENTER) {
+    logoWhite: imageSharp(id: { regex: "/fitonlogo/" }) {
+      resize(width: 743, height: 425, cropFocus: CENTER) {
         # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
         src
       }

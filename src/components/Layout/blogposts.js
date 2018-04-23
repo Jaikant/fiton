@@ -103,16 +103,6 @@ const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
       >
 
         {group
-           .filter(post => post.node.featured == "featured")
-           .map(({ node: post }, index) => {
-             return (
-               <MainPost post={post}/>
-             )
-           }
-         )
-        }
-
-        {group
           .filter(post => post.node.title.length > 0 && post.node.featured != "featured")
           .map(({ node: post }, index) => {
             const image = post.featuredImage

@@ -1,0 +1,36 @@
+---
+- id: Badminton for kids under 10
+  type: kamu
+  date: 2019-03-04
+  time: "19:30"
+  location: Malleswaram, Bangalore
+  locationLink: "https://www.google.com/maps/place/TU+Delft+Unit+Culture/@51.9954478,4.3744681,17z/data=!4m8!1m2!2m1!1sunit+culture!3m4!1s0x47c5b58f10c8176b:0x87c46f9383b7a8b2!8m2!3d51.9951969!4d4.3771742?hl=en"
+  freeEntrance: true
+
+- id: Skating for kids under 8
+  type: main
+  date: 2019-03-16
+  time: "20:15"
+  location: Malleswaram, Bangalore
+  locationLink: "https://www.google.com/maps/place/Royal+Conservatory+in+The+Hague/@52.0812408,4.3297854,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b71069f918ed:0x1ed7cc387835cef!8m2!3d52.0812408!4d4.3319741?hl=en"
+  tickets: "https://www.theaterdeveste.nl/programma/6148/Krashna_Musika/50_jaar_Krashna_Musika_een_gouden_lustrum_/"
+
+- id: Summer Football camp
+  type: main
+  date: 2019-03-17
+  time: "20:15"
+  location: Malleswaram, Bangalore
+  locationLink: "https://www.google.com/maps/place/TU+Delft+Aula+Conference+Centre/@52.0021289,4.3711095,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b5929cb28153:0xd5b81144a89ac9a7!8m2!3d52.0021256!4d4.3732982?hl=en"
+  tickets: "https://www.theaterdeveste.nl/programma/6150/Krashna_Musika/50_jaar_Krashna_Musika_een_gouden_lustrum_/"
+
+- id: Swimming lessons for kids
+  type: chamber-choir
+  date: 2018-05-25
+  location: Malleswaram, Bangalore
+  locationLink: "https://www.google.com/maps/place/Lutherse+kerk/@52.0154977,4.351111,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xc0f901a6850e2bf5!8m2!3d52.0154977!4d4.3532997?cid=13905147139191614453"
+
+- id: Swimming lessons for adults
+  type: main
+  date: 2018-07-15
+  location: Malleswaram, Bangalore
+  locationLink: "https://www.google.com/maps/place/Muziekgebouw+aan+'t+IJ/@52.3782504,4.9112467,17z/data=!3m1!4b1!4m5!3m4!1s0x47c609afa4643f6f:0x84b02f41a342e459!8m2!3d52.3782504!4d4.9134354?hl=en"

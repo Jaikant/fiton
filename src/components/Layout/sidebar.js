@@ -95,15 +95,6 @@ const SideBar = ({ group, first, last, previousUrl, nextUrl }) => {
                <EmailCaptureHomePage />
             </div>
           </SidebarCard>
-          <SidebarCard>
-             <p> ... </p> 
-          </SidebarCard>
-          <SidebarCard>
-             <p> ... </p> 
-          </SidebarCard>
-          <SidebarCard>
-             <p> ... </p> 
-          </SidebarCard>
       </Flex>
     </div>
   );

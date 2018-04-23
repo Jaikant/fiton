@@ -6,6 +6,12 @@ import FaHeart from 'react-icons/lib/fa/heart';
 import styled, { css } from 'react-emotion';
 import colors from '../utils/colors';
 import Helmet from '../components/helmet';
+import Hero from '../components/Layout/hero'
+import ConcertSection from '../components/ConcertSection'
+import NewsSection from "../components/NewsSection";
+
+/*
+*/
 
 const blogTheme = css`
   h1, h2, h3, h4, h5, h6 {
@@ -25,22 +31,18 @@ const bgColor = css`
 const ContentfulBlogIndex = ({ data, location, pathContext }) => {
 //  const { edges: posts } = data.allMarkdownRemark;
 // The below objects are coming from gatsby-paginate
+  const { hero } = data
   const { group, index, first, last, pathPrefix } = pathContext;
   const previousUrl = index - 1 == 1 ? pathPrefix : pathPrefix + "/" + (index - 1).toString();
   const nextUrl = pathPrefix + "/" + (index + 1).toString();
   return (
     <div>
-      <div className={bgColor}>
-        <div css={`
-             padding-top: 17vh;
-             display: flex;
-             flex-wrap: wrap;
-             justify-content: center;
-             color: white;
-             font-size: 1.2em;
-          `}>
-        </div>
-      </div>
+    { hero && <Hero
+      title={""}
+      image={hero}
+      height={'50vh'}
+      />
+    }
       <div className={blogTheme}>
         <Helmet
           title={"Tech47 - Building for India"}
@@ -49,9 +51,16 @@ const ContentfulBlogIndex = ({ data, location, pathContext }) => {
           pathname={location.pathname}
         />
       </div>
-      <Flex css="max-width: 1024px; margin: 0 auto; align-content: center;">
-        <BlogPosts group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
+      <hr />
+      <Flex css={`max-width: 1024px; margin: 0 auto; align-content: center;`}>
+        <ConcertSection concerts={data.allConcertsYaml.edges} />
         <SideBar group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
+      </Flex>
+      <Flex css={`margin: 0 auto; align-content: center; background-color: ${colors.tech47dropDown}; color: ${colors.tech47white}`}>
+        <hr />
+        <div css="margin: 32px">
+         <BlogPosts group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
+        </div>
       </Flex>
     </div>
   );
@@ -65,7 +74,34 @@ export const contentfulQuery = graphql`
         src
       }
     }
+    hero: imageSharp(id: { regex: "/fitoncover/" }) {
+      sizes(maxWidth: 1800) {
+        ...GatsbyImageSharpSizes
+      }
   }
+  allConcertsYaml {
+  edges {
+    node {
+      id
+      type
+      date
+      time
+      location
+      locationLink
+      tickets
+      freeEntrance
+    }
+  }
+}
+allNewsYaml {
+  edges {
+    node {
+      id
+      date
+    }
+  }
+}
+}
 `;
 /* eslint-enable */
 

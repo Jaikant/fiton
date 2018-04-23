@@ -39,7 +39,6 @@ class MobileNav extends Component {
           <div className={navStyle}>
             <img
               className={logoClass}
-              width={160}
               height={40}
               src={this.props.logo}
               alt="Tech47 Logo"
