@@ -58,19 +58,22 @@ const colors = {
   // original palette by @SachaG
   // @see https://www.figma.com/file/J6IYJEtdRmwJQOrcZ2DfvxDD/Gatsby
   tech47: `#663399`, // was #744c9e
-  tech47blue: `rgba(74, 62, 255, 1)`,
-  tech47category: `rgba(81, 185, 238)`,
-  tech47categoryhover: `rgba(81, 185, 238, 0.5)`,
-  tech47purple: `rgba(173, 60, 203, 1)`,
-  tech47purplehex: `#ad3ccb`,
+  // primary color
+  tech47blue: `rgba(32, 150, 186, 1)`,
+  // Secondary color
+  tech47purple: `rgba(223, 110, 33, 1)`,
+  tech47purplehex: `#df6e21`,
+  // Tertiary color
+  tech47pink: `rgba(207, 145, 157, 1)`,
+  tech47pinkhex: `#cf919d`,
+  tech47category: `rgba(231, 177, 131, 1)`,
+  tech47categoryhover: `rgba(231, 177, 131, 0.5)`,
   tech47hover: `rgba(255, 255, 255, 0.5)`,
   tech47date: `#d1d1d1`,
-  tech47pink: `rgba(252, 56, 167, 1)`,
-  tech47pinkhex: `#FC38A7`,
   tech47background: `rgba(243, 246, 250)`,
   tech47white: '#ffffff',
-  tech47dummy: `red`, 
-  tech47dummyhex: `#ff0000`, 
+  tech47dummy: `red`,
+  tech47dummyhex: `#ff0000`,
   gray: {
     dark: gray(8, 270),
     copy: gray(12, 270),

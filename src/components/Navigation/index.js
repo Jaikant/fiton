@@ -377,7 +377,7 @@ class Navigation extends Component {
 
     const desktopNav = css`
       ${basicNav};
-      background: ${shouldBeHide ? 'transparent' : 'rgba(173,60,203,1)'};
+      background: ${shouldBeHide ? 'transparent' : colors.tech47purple};
       transition: background 0.3s ease-out;
       box-shadow: ${shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)'};
       border-top: 4px solid ${colors.tech47pink};
