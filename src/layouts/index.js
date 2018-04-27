@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { injectGlobal } from 'react-emotion';
+import styled, { injectGlobal, css } from 'react-emotion';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import 'typeface-quattrocento-sans';
@@ -8,8 +8,10 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import colors from '../utils/colors';
 import favicon from '../assets/images/tech47-favicon2.png';
+import presets from "../utils/presets"
 import "../css/prism.css"
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 /* eslint-disable */
 //import normalize from 'normalize.css';
 
@@ -53,7 +55,15 @@ const Layout = ({ children, location, data }) => (
       logoWhite={data.logoWhite.resize.src}
       location={location}
     />
-    {children()}
+    <div css={css({
+              minHeight: `calc(100% - 50px)`,
+              [presets.Tablet]: {
+                 paddingTop: (location.pathname == `/`) ? 0 : presets.headerHeight,
+              },
+            })}
+    >
+      {children()}
+    </div>
     <Footer title={data.site.siteMetadata.title} />
   </MainDiv>
 );

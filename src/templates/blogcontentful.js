@@ -9,6 +9,7 @@ import Helmet from '../components/helmet';
 import Hero from '../components/Layout/hero'
 import ConcertSection from '../components/ConcertSection'
 import NewsSection from "../components/NewsSection";
+import Slider from "react-slick";
 
 /*
 */
@@ -24,25 +25,66 @@ const blogTheme = css`
 
 const bgColor = css`
   width: 100%;
-	height: 50vh;
-	background: linear-gradient(${colors.tech47blue}, ${colors.tech47purple});
+  height: 50vh;
+  background: linear-gradient(${colors.tech47blue}, ${colors.tech47purple});
 `;
+
+const settings = {
+  dots: false,
+  fade: true,
+  infinite: true,
+  speed: 2000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  cssEase: "linear",
+  arrows: false,
+ };
+
 
 const ContentfulBlogIndex = ({ data, location, pathContext }) => {
 //  const { edges: posts } = data.allMarkdownRemark;
 // The below objects are coming from gatsby-paginate
-  const { hero } = data
+  const { hero, skating, pool, basketball, soccer } = data
   const { group, index, first, last, pathPrefix } = pathContext;
   const previousUrl = index - 1 == 1 ? pathPrefix : pathPrefix + "/" + (index - 1).toString();
   const nextUrl = pathPrefix + "/" + (index + 1).toString();
   return (
     <div>
-    { hero && <Hero
-      title={""}
-      image={hero}
-      height={'50vh'}
-      />
-    }
+      <Slider {...settings}>
+        <div>
+        { soccer && <Hero
+          title={""}
+          image={soccer}
+          height={'50vh'}
+          />
+        }
+        </div>
+        <div>
+        { skating && <Hero
+          title={""}
+          image={skating}
+          height={'50vh'}
+          />
+        }
+        </div>
+        <div>
+        { pool && <Hero
+          title={""}
+          image={pool}
+          height={'50vh'}
+          />
+        }
+        </div>
+        <div>
+        { basketball && <Hero
+          title={""}
+          image={basketball}
+          height={'50vh'}
+          />
+        }
+        </div>
+      </Slider>
       <div className={blogTheme}>
         <Helmet
           title={"Tech47 - Building for India"}
@@ -52,14 +94,15 @@ const ContentfulBlogIndex = ({ data, location, pathContext }) => {
         />
       </div>
       <hr />
+
       <Flex css={`max-width: 1024px; margin: 0 auto; align-content: center;`}>
+
         <ConcertSection concerts={data.allConcertsYaml.edges} />
         <SideBar group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
       </Flex>
       <Flex css={`margin: 0 auto; align-content: center; background-color: ${colors.tech47dropDown}; color: ${colors.tech47white}`}>
         <hr />
         <div css="margin: 32px">
-         <BlogPosts group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
         </div>
       </Flex>
     </div>
@@ -78,7 +121,27 @@ export const contentfulQuery = graphql`
       sizes(maxWidth: 1800) {
         ...GatsbyImageSharpSizes
       }
-  }
+    }
+    soccer: imageSharp(id: { regex: "/soccer/" }) {
+      sizes(maxWidth: 1800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    basketball: imageSharp(id: { regex: "/basketball/" }) {
+      sizes(maxWidth: 1800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    skating: imageSharp(id: { regex: "/skating/" }) {
+      sizes(maxWidth: 1800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    pool: imageSharp(id: { regex: "/pool/" }) {
+      sizes(maxWidth: 1800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
   allConcertsYaml {
   edges {
     node {

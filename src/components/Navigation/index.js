@@ -38,17 +38,25 @@ const menuConfig = [
   {
     title: 'SPORTS',
     url: [
-      { title: 'BADMINTON', url: '/serverless' },
-      { title: 'FOOTBALL', url: '/fullstack' },
-      { title: 'SKATING', url: '/aws' },
-      { title: 'SWIMMING', url: '/aws' },
-      { title: 'BASKETBALL', url: '/aws' },
+      { title: 'BADMINTON', url: '#' },
+      { title: 'FOOTBALL', url: '#' },
+      { title: 'SKATING', url: '#' },
+      { title: 'SWIMMING', url: '#' },
+      { title: 'BASKETBALL', url: '#' },
     ],
     submenu: true
   },
-  { title: 'MEMBERSHIP', url: '/Contact', submenu: false },
-  { title: 'COACHING', url: '/Contact', submenu: false },
-  { title: 'NEWS', url: '/Contact', submenu: false },
+  {
+    title: 'GALLERY',
+    url: [
+      { title: 'BADMINTON', url: '/badminton' },
+      { title: 'FOOTBALL', url: '/soccer' },
+      { title: 'SKATING', url: '/skating' },
+      { title: 'SWIMMING', url: '/swimmin' },
+      { title: 'BASKETBALL', url: '/basketball' },
+    ],
+    submenu: true
+  },
   { title: 'CONTACT', url: '/Contact', submenu: false },
 ];
 

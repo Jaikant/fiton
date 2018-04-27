@@ -2,6 +2,7 @@ const parseFilepath = require('parse-filepath');
 const path = require('path');
 const slash = require('slash');
 const createPaginatedPages = require('gatsby-paginate');
+const createGalleryPages = require('./graphQL/createGalleryPages');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
@@ -32,6 +33,11 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
     //Below check is needed for contentful. else it errors.
   }
+};
+
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
+  createGalleryPages(createPage, graphql);
 };
 
 const createTagPages = (createPage, edges) => {
@@ -75,6 +81,7 @@ const createTagPages = (createPage, edges) => {
     });
 }
 // image dimensions 268 * 0.75 = 201
+/*
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
@@ -186,3 +193,4 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     );
   });
 };
+*/
