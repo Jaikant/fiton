@@ -38,22 +38,22 @@ const menuConfig = [
   {
     title: 'SPORTS',
     url: [
-      { title: 'BADMINTON', url: '#' },
-      { title: 'FOOTBALL', url: '#' },
-      { title: 'SKATING', url: '#' },
-      { title: 'SWIMMING', url: '#' },
-      { title: 'BASKETBALL', url: '#' },
+      { title: 'BADMINTON', url: '/badminton' },
+      { title: 'FOOTBALL', url: '/football' },
+      { title: 'SKATING', url: '/skating' },
+      { title: 'SWIMMING', url: '/swimming' },
+      { title: 'BASKETBALL', url: '/basketball' },
     ],
     submenu: true
   },
   {
     title: 'GALLERY',
     url: [
-      { title: 'BADMINTON', url: '/badminton' },
-      { title: 'FOOTBALL', url: '/soccer' },
-      { title: 'SKATING', url: '/skating' },
-      { title: 'SWIMMING', url: '/swimmin' },
-      { title: 'BASKETBALL', url: '/basketball' },
+      { title: 'BADMINTON', url: '/gallery/badminton' },
+      { title: 'FOOTBALL', url: '/gallery/soccer' },
+      { title: 'SKATING', url: '/gallery/skating' },
+      { title: 'SWIMMING', url: '/gallery/swimming' },
+      { title: 'BASKETBALL', url: '/gallery/basketball' },
     ],
     submenu: true
   },

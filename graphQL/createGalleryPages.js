@@ -25,7 +25,7 @@ const createGalleryPages = (createPage, graphql) => {
         if (result.error) {
           return Promise.reject(result.errors)
         }
-        
+
         result.data.allContentfulGallery.edges.map(({ node }) => {
           createPage({
             path: node.slug,

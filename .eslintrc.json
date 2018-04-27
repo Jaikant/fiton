@@ -29,6 +29,7 @@
         "react/prop-types": "off",
         "no-nested-ternary" : "warn",
         "react/jsx-filename-extension": "off",
+        "react/jsx-boolean-value": "warn",
         "react/no-danger": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "no-underscore-dangle": "off",
