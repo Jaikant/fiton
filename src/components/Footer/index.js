@@ -162,18 +162,10 @@ const Footer = props => (
           <a href="https://www.instagram.com"> <FaFacebookSquare css="color: white; margin: 0px 4px;" /> </a>
         </div>
         <div className="copyright">
-          <p> Designed by  <a href="https://tech47.in" css={`color: ${colors.tech47date};`}>{`${props.title}`}</a> </p>
+          <p> Designed by  <a href="https://tech47.in" css={`color: ${colors.tech47date};`}>tech47.in</a> </p>
         </div>
       </div>
     </div>
 );
-
-Footer.propTypes = {
-  title: PropTypes.string,
-};
-
-Footer.defaultProps = {
-  title: 'tech47.in',
-};
 
 export default Footer;
