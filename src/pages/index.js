@@ -45,10 +45,10 @@ const settings = {
 const Index = ({ data, location, pathContext }) => {
 //  const { edges: posts } = data.allMarkdownRemark;
 // The below objects are coming from gatsby-paginate
-  const { hero, skating, pool, basketball, soccer } = data
-  const { group, index, first, last, pathPrefix } = pathContext;
-  const previousUrl = index - 1 == 1 ? pathPrefix : pathPrefix + "/" + (index - 1).toString();
-  const nextUrl = pathPrefix + "/" + (index + 1).toString();
+  const { hero, skating, pool, basketball, soccer, allContentfulSportsPage } = data
+  const { edges: group } = allContentfulSportsPage;
+  console.log("the group is ", group);
+
   return (
     <div>
       <Slider {...settings}>
@@ -94,11 +94,9 @@ const Index = ({ data, location, pathContext }) => {
         />
       </div>
       <hr />
-
-      <Flex css={`max-width: 1024px; margin: 0 auto; align-content: center;`}>
-
-        <ConcertSection concerts={data.allConcertsYaml.edges} />
-        <SideBar group={group} first={first} last={last} previousUrl={previousUrl} nextUrl={nextUrl}/>
+      <Flex css="max-width: 1024px; margin: 0 auto; align-content: center;">
+        <BlogPosts group={group} />
+        <SideBar data={data.allContentfulEvents.edges}/>
       </Flex>
     </div>
   );
@@ -137,20 +135,46 @@ export const IndexQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-  allConcertsYaml {
-  edges {
-    node {
-      id
-      type
-      date
-      time
-      location
-      locationLink
-      tickets
-      freeEntrance
+   allContentfulEvents {
+    edges {
+      node {
+        title
+        slug
+        type
+        date
+        location
+        locationLink
+        freeEntrance
+        tickets
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
     }
   }
-}
+allContentfulSportsPage {
+    edges {
+      node {
+        title
+        slug
+        description {
+          childMarkdownRemark {
+            excerpt(pruneLength: 200)
+          }
+        }
+        coverImage {
+          resolutions(width: 350, height: 175, cropFocus: FACES) {
+            width
+            height
+            src
+            srcSet
+          }
+        }
+      }
+    }
+  }
 allNewsYaml {
   edges {
     node {

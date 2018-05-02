@@ -1,9 +1,13 @@
 import Link from 'gatsby-link'
 import React from 'react'
+import FaCalendar from 'react-icons/lib/fa/calendar';
+import FaClockO from 'react-icons/lib/fa/clock-o'
+import FaMapPin from 'react-icons/lib/fa/map-pin'
+import FaTicket from 'react-icons/lib/fa/ticket'
 import faunIcon from '../assets/images/fitonlogo.png'
 
 const SHOW_PAST_CONCERTS_FOR_N_DAYS = 2
-const MAX_NUM_CONCERTS = 3
+const MAX_NUM_CONCERTS = 5
 
 const ConcertSection = ({ concerts }) => {
   const dateCheckpoint = new Date()
@@ -25,52 +29,46 @@ const ConcertSection = ({ concerts }) => {
       <div style={{margin: '16px'}}>
         <h2> Upcoming events </h2>
         {sortedConcerts.map((concert) => {
-         const concertid = concert.id;
+         const concertid = concert.slug;
+         const dateTime = new Date(concert.date)
          return (
-          <div key={concert.id} style={{display: 'flex', padding: '16px'}}>
-            <div style={{margin: '0px 8px'}}>
+          <div key={concert.id} css="margin: 4px">
+          <Link to={`/${concert.slug}`}>
+            <div style={{margin: '32px 8px'}}>
               <img
                 src={faunIcon}
-                alt="Krashna Musika"
+                alt="FITON"
                 width="50px"
               />
-            </div>
-            <div>
-              <h5>
-                <Link to={`/concerts/${concert.id}`} style={{fontWeight: 'bold'}}>
-                   {`${concert.id}`}
-                </Link>
-              </h5>
-              <p>
-                <span />
-                {new Date(concert.date).toLocaleDateString('nl-NL')}
-                {' - '}
-                <span />
-                <a href={concert.locationLink}>
-                  {concert.location}
-                </a>
+              <h4>
+                   {`${concert.title}`}
+              </h4>
+              <div>
+                <FaCalendar /> {dateTime ? `${dateTime.toLocaleDateString('en-GB')}` : ''}
+              </div>
+              <div>
+                <FaClockO /> {dateTime ? ` ${dateTime.toLocaleTimeString()}` : '...'}
+              </div>
+              <div>
                 {concert.tickets ? (
-                  <a href={concert.tickets}>
-                    <span >
-                      <span  />
-                      Tickets Available
-                    </span>
-                  </a>
+                  <div>
+                    <FaTicket /> {` `}
+                    <a href={concert.tickets}>Tickets available</a>
+                  </div>
                 ) : (
-                  undefined
+                  ''
                 )}
                 {concert.freeEntrance ? (
-                  <a href={concert.tickets}>
-                    <span>
-                      <span />
-                      Free Entrance
-                    </span>
-                  </a>
+                  <div>
+                    <FaTicket /> {` `}
+                    Free Entrace
+                  </div>
                 ) : (
-                  undefined
+                  ''
                 )}
-              </p>
+              </div>
             </div>
+          </Link>
           </div>
         )}
       )}

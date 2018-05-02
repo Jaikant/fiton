@@ -73,7 +73,7 @@ const colors = {
   tech47categoryhover: `rgba(226, 172, 155, 0.5)`,
   tech47hover: `rgba(95, 95, 95, 0.5)`,
   tech47date: `#d1d1d1`,
-  tech47background: `#ffffff`,
+  tech47background: `#f3f3f3`,
   tech47white: '#ffffff',
   tech47dummy: `red`,
   tech47dummyhex: `#ff0000`,

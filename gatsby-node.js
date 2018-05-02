@@ -4,6 +4,8 @@ const slash = require('slash');
 const createPaginatedPages = require('gatsby-paginate');
 const createGalleryPages = require('./graphQL/createGalleryPages');
 const createSportsPages = require('./graphQL/createSportsPages');
+const createGeneralPages = require('./graphQL/createGeneralPages');
+const createEventPages = require('./graphQL/createEventPages');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
@@ -40,6 +42,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
   createGalleryPages(createPage, graphql);
   createSportsPages(createPage, graphql);
+  createGeneralPages(createPage, graphql);
+  createEventPages(createPage, graphql);
 };
 
 const createTagPages = (createPage, edges) => {

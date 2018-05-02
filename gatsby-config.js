@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Tech47`,
-    siteUrl: `https://www.tech47.com`,
-    description: `Tech47 ...`,
+    title: `FITON SPORTS`,
+    siteUrl: `https://www.fitonsports.com`,
+    description: `FITON Sports`,
     instagram: '/social-media/instagram',
   },
   mapping: {

@@ -7,6 +7,7 @@ import Img from 'gatsby-image';
 import styled, { css, keyframes } from 'react-emotion';
 import colors from '../../utils/colors';
 import media from '../../utils/media';
+import ConcertSection from '../ConcertSection'
 
 const SidebarCard = styled.div`
   background-color: ${colors.tech47white};
@@ -63,19 +64,19 @@ const StyledSpan = styled.span`
   font-size: 0.65em;
 `;
 
-const SideBar = ({ group, first, last, previousUrl, nextUrl }) => {
+const SideBar = ({ data }) => {
   return (
     <div>
       <Flex css={`
               ${media.mobile`
-                -ms-transform: translate(0px, -16vh);
-                -webkit-transform: translate(0px, -16vh);
-                transform: translate(0px, -16vh);
+                -ms-transform: translate(0px, 0vh);
+                -webkit-transform: translate(0px, 0vh);
+                transform: translate(0px, 0vh);
               `};
               ${media.tablet`
-                -ms-transform: translate(0px, -16vh);
-                -webkit-transform: translate(0px, -16vh);
-                transform: translate(0px, -16vh);
+                -ms-transform: translate(0px, 0vh);
+                -webkit-transform: translate(0px, 0vh);
+                transform: translate(0px, 0vh);
               `};
               ${media.desktop`
                 max-width: 290px;
@@ -93,6 +94,11 @@ const SideBar = ({ group, first, last, previousUrl, nextUrl }) => {
                   Receive our news letter to stay on top of the latest updates in technology
                </div>
                <EmailCaptureHomePage />
+            </div>
+          </SidebarCard>
+          <SidebarCard>
+            <div css="padding: 24px;">
+              <ConcertSection concerts={ data }/>
             </div>
           </SidebarCard>
       </Flex>

@@ -16,7 +16,7 @@ const stripeAnimation = keyframes`
 const buttonPrimary = css`
   ${buttonBasic};
   background-color: ${colors.tech47pink};
-  color: ${colors.third};
+  color: ${colors.tech47white};
   transition: all 0.3s ease;
 
   &:hover, &:focus {

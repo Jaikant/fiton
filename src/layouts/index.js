@@ -7,7 +7,7 @@ import 'typeface-work-sans';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import colors from '../utils/colors';
-import favicon from '../assets/images/tech47-favicon2.png';
+import favicon from '../assets/images/favicon.png';
 import presets from "../utils/presets"
 import "../css/prism.css"
 import "slick-carousel/slick/slick.css";

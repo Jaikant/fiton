@@ -48,7 +48,7 @@ const BlogCard = styled.div`
   background-color: ${colors.tech47white};
   position: relative;
   width: 350px;
-  height: 460px;
+  min-height: 390px;
   margin: 8px 8px 8px 8px;
   ${media.tablet`
     margin: 8px 8px 8px 8px;
@@ -91,7 +91,7 @@ const StyledSpan = styled.span`
   font-size: 0.65em;
 `;
 
-const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
+const BlogPosts = ({ group, first = null, last = null, previousUrl = null, nextUrl = null }) => {
   return (
      <div>
       <div css={`
@@ -105,33 +105,40 @@ const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
         {group
           .filter(post => post.node.title.length > 0 && post.node.featured != "featured")
           .map(({ node: post }, index) => {
-            const image = post.featuredImage
-              ? post.featuredImage.resolutions
+            const image = post.coverImage
+              ? post.coverImage.resolutions
               : null;
             return (
               <div key={post.id}>
-              <BlogCard image={post.featuredImage ? true : false}>
+              <BlogCard image={post.coverImage ? true : false}>
                 <Link to={post.slug}>
                   {image ?
                     <Img
-                      alt={post.featuredImage.title}
+                      alt={post.coverImage.title}
                       resolutions={image}
                     /> : null }
                 </Link>
                 <div css="padding: 24px;">
                   <div>
-                    <div className={tagStyle}>
-                      <Tags list={post.tags || []} />
-                    </div>
-                    <span className={dateStyle}> {post.updatedAt} &middot; </span>
-                    <StyledSpan>{post.blog.childMarkdownRemark.timeToRead} min read </StyledSpan>
+                    {
+                      post.tags && <div className={tagStyle}>
+                        <Tags list={post.tags || []} />
+                      </div>
+                    }
+                    {
+                      post.updatedAt && <span className={dateStyle}> {post.updatedAt} &middot; </span>
+                    }
+                    {
+                      post.description.childMarkdownRemark.timeToRead &&
+                      <StyledSpan>{post.description.childMarkdownRemark.timeToRead} min read </StyledSpan>
+                    }
                   </div>
                   <h3>
                     {post.title}
                   </h3>
                   <Link to={post.slug}>
                     <div className={excerptStyle}>
-                      <span>{post.blog.childMarkdownRemark.excerpt}</span>
+                      <span>{post.description.childMarkdownRemark.excerpt}</span>
                     </div>
                   </Link>
                   <div className={seemoreStyle}>
@@ -157,10 +164,14 @@ const BlogPosts = ({ group, first, last, previousUrl, nextUrl }) => {
         <div css="display: flex; justify-content: center;">
           <div css="flex-grow: 1; display: flex; font-size: 0.8em; margin: 16px; max-width: 900px;">
             <div css="flex-grow: 1; display: flex; justify-content: left;">
-              <NavLink test={first} url={previousUrl} text="Previous Page" />
+              {
+                previousUrl && <NavLink test={first} url={previousUrl} text="Previous Page" />
+              }
             </div>
             <div css="display: flex; justify-content: right;">
-              <NavLink test={last} url={nextUrl} text="Next Page" />
+              {
+                nextUrl && <NavLink test={last} url={nextUrl} text="Next Page" />
+              }
             </div>
           </div>
         </div>
