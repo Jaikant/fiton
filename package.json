@@ -32,7 +32,7 @@
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.10",
     "gatsby-transformer-yaml": "^1.5.16",
-    "google-map-react": "^0.34.0",
+    "google-map-react": "^1.0.0",
     "gray-percentage": "^2.0.0",
     "hex2rgba": "0.0.1",
     "jsonp": "^0.2.1",
