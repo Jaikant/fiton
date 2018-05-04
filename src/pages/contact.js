@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 import { css } from 'emotion'
 import find from 'lodash.find'
+import FaRoad from 'react-icons/lib/fa/road'
 import PageBody from '../components/pagebody'
 import ButtonPrimary from '../components/Buttons'
 import colors from '../utils/colors'
@@ -13,15 +14,19 @@ const page = css`
   margin: 3.5em;
 `
 const mapClass = css`
-  display: flex;
-  font-weight: 700;
+  padding: 8px;
   font-size: 1.1em;
-  color: ${colors.tech47pink};
-  background-color: ${colors.tech47white};
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: ${colors.tech47pink};
+  color: ${colors.tech47date};
 `;
 const AnyReactComponent = ({ text }) => (
    <div className={mapClass}>
-     <img src={pinsvg} width="70px" height="70px" alt="FitON" />
+     <p> FITON SPORTS </p>
+     <p> No 10, 5, Kembathalli Main Rd, Gundappa Layout, Pillaganahalli, Bengaluru, Karnataka 560083 </p>
+     <p> <FaRoad /> <a href="https://www.google.com/maps/dir//no+10,+FITON+SPORTS,+5,+Kembathalli+Main+Rd,+Gundappa+Layout,+Pillaganahalli,+Bengaluru,+Karnataka+560083/@12.8554631,77.5846614,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bae6abe487376ad:0x620b9123d0cefb8a!2m2!1d77.5868501!2d12.8554631?hl=en"> Get Directions </a> </p>
    </div>
 )
 
@@ -135,7 +140,14 @@ function createMapOptions(maps) {
     mapTypeControlOptions: {
       position: maps.ControlPosition.TOP_RIGHT
     },
-    mapTypeControl: true
+    mapTypeControl: true,
+    styles: [{
+      "featureType": "all",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "#on"
+      }]
+    }]
   };
 }
 
@@ -146,13 +158,35 @@ class SimpleMap extends React.Component {
       lat: 59.95,
       lng: 30.33
     },
-    zoom: 15
+    zoom: 14
   };
 
   constructor(props) {
     super(props)
     this.state={};
   }
+
+  onGoogleApiLoaded = ({map, maps}) => {
+    this.map = map;
+    this.maps = maps;
+    this.infowindow = new maps.InfoWindow();
+    const address = {lat: 12.8554631, lng: 77.5846614};
+    this.renderMarkers()
+  }
+
+  renderMarkers = () => {
+    const marker = new this.maps.Marker({
+      position: {lat: 12.8554631, lng: 77.5846614},
+      map: this.map,
+      title: 'FITON SPORTS'
+    });
+
+    marker.addListener('click', () => {
+      this.infowindow.setContent('FITON SPORTS');
+      this.infowindow.open(this.map, marker);
+    });
+  }
+
 
   render() {
     const post = find(
@@ -168,14 +202,16 @@ class SimpleMap extends React.Component {
       <div>
         <div style={{ height: '50vh', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyA8Lbj9YiR00dgZPxYkjR826jmj0poa-FE' }}
+            bootstrapURLKeys={{ key: 'AIzaSyA8Lbj9YiR00dgZPxYkjR826jmj0poa-FE', libraries: 'places'}}
+            onGoogleApiLoaded={this.onGoogleApiLoaded}
             defaultCenter={location}
             options={createMapOptions}
             defaultZoom={this.props.zoom}
+            layerTypes={['TrafficLayer']}
           >
             <AnyReactComponent
-              lat={12.8554631}
-              lng={77.5846614}
+              lat={12.864}
+              lng={77.55}
               text='FITON SPORTS'
             />
           </GoogleMapReact>

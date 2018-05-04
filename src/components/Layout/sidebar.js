@@ -89,15 +89,6 @@ const SideBar = ({ data }) => {
       >
           <SidebarCard>
             <div css="padding: 24px;">
-               <h5> Subscribe </h5>
-               <div className={bodyStyle}>
-                  Receive our news letter to stay on top of the latest updates in technology
-               </div>
-               <EmailCaptureHomePage />
-            </div>
-          </SidebarCard>
-          <SidebarCard>
-            <div css="padding: 24px;">
               <ConcertSection concerts={ data }/>
             </div>
           </SidebarCard>

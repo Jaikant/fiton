@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import FaChevronDown from "react-icons/lib/fa/chevron-down";
+import { slide as BurgerMenu } from 'react-burger-menu'
 import feather from '../../utils/feather';
 import colors from '../../utils/colors';
 import MobileNav from './mobile';
@@ -49,11 +50,11 @@ const menuConfig = [
   {
     title: 'GALLERY',
     url: [
-      { title: 'BADMINTON', url: '/gallery/badminton' },
-      { title: 'FOOTBALL', url: '/gallery/soccer' },
-      { title: 'SKATING', url: '/gallery/skating' },
-      { title: 'SWIMMING', url: '/gallery/swimming' },
-      { title: 'BASKETBALL', url: '/gallery/basketball' },
+      { title: 'BADMINTON GALLERY', url: '/gallery/badminton' },
+      { title: 'FOOTBALL GALLERY', url: '/gallery/soccer' },
+      { title: 'SKATING GALLERY', url: '/gallery/skating' },
+      { title: 'SWIMMING GALLERY', url: '/gallery/swimming' },
+      { title: 'BASKETBALL GALLERY', url: '/gallery/basketball' },
     ],
     submenu: true
   },
@@ -67,7 +68,7 @@ const menuConfig = [
 // It is great to see the css along with the JS and JSX!
 
 const MItmblStyle = css`
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   text-transform: uppercase;
 `;
 const MItmbl = ({ to, href, toggleNav, children, key }) => (
@@ -104,35 +105,18 @@ MItmbl.defaultProps = {
 
 const menuMobileStyle = css`
   list-style-type: none;
-  padding: 0;
-  margin: 3rem 0 0 0;
+  margin: 1rem 0 0 0;
   height: 100%;
-  text-align: center;
-  font-size: 1.25em;
+  padding-left: 32px;
+  text-align: left;
+  font-size: 0.8em;
 `;
 
-const MenuMobile = ({ toggleNav }) => (
-  <ul className={menuMobileStyle}>
-    {menuConfig.map(
-      menu =>
-        menu.submenu ? (
-          <SubMenuMobile menu={menu} toggleNav={toggleNav} />
-        ) : (
-          <MItmbl
-            key={menu.url}
-            to={menu.url}
-            href={menu.href}
-            toggleNav={toggleNav}
-          >
-            {menu.title}
-          </MItmbl>
-        )
-    )}
-  </ul>
-);
-MenuMobile.propTypes = {
-  toggleNav: PropTypes.func.isRequired
-};
+// Brand Style
+const logoClass = css`
+  font-size: 1.5em;
+  margin: 0px auto 0px 16px;
+`;
 
 const SubMenuMobile = ({ menu, toggleNav }) => (
   <div>
@@ -308,11 +292,31 @@ const mobileStyle = css`
   z-index: 9999;
 `;
 
-// Brand Style
-const logoClass = css`
-  font-size: 1.5em;
-  margin: 0px auto 0px 16px;
-`;
+const styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    right: '8px',
+    top: '8px'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenu: {
+    background: colors.tech47purple,
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+  },
+  bmOverlay: {
+    background: `rgba(55, 26, 29, 0.2)`
+  }
+}
 
 // Main Navigation Component
 class Navigation extends Component {
@@ -391,12 +395,6 @@ class Navigation extends Component {
       box-shadow: ${shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)'};
       border-top: 4px solid ${colors.tech47pink};
 
-      & div {
-        margin: 0px 16px 0px auto;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
       & div img {
         display: block;
         margin: auto;
@@ -433,6 +431,40 @@ class Navigation extends Component {
       </ul>
     );
 
+    const MenuMobile = ({ toggleNav }) => (
+      <ul className={menuMobileStyle}>
+        <img
+          className={logoClass}
+          height={40}
+          align="left"
+          src={this.props.logoWhite}
+          alt="Tech47 Logo"
+          css="display: block;"
+        />
+        <br clear="all" />
+
+        {menuConfig.map(
+          menu =>
+            menu.submenu ? (
+              <SubMenuMobile menu={menu} toggleNav={toggleNav} />
+            ) : (
+              <MItmbl
+                key={menu.url}
+                to={menu.url}
+                href={menu.href}
+                toggleNav={toggleNav}
+              >
+                {menu.title}
+              </MItmbl>
+            )
+        )}
+      </ul>
+    );
+    MenuMobile.propTypes = {
+      toggleNav: PropTypes.func.isRequired
+    };
+
+
     return (
       <nav>
         <Box className={desktopNav}>
@@ -444,14 +476,14 @@ class Navigation extends Component {
           >
             <img
               className={logoClass}
-              height={25}
+              height={30}
               src={this.props.logoWhite}
               alt="Tech47 Logo"
             />
           </Link>
           <Menu />
         </Box>
-        <Box width="100%" px={[3, 3, 4]} className={mobileNav}>
+        <Box width="100%" className={mobileNav}>
           <Link
             to="/"
             activeStyle={{
@@ -465,24 +497,21 @@ class Navigation extends Component {
               alt="Tech47 Logo"
             />
           </Link>
-          <div
-            onClick={this.toggleNav}
-            role="button"
-            tabIndex="0"
-            onKeyPress={this.toggleNav}
-          >
-            <img src={menusvg} width="32px" height="32px" alt="Menu" />
+          <div id="outer-container" css="height: 100%;">
+            <BurgerMenu
+              styles={styles}
+              width='100%'
+              pageWrapId="page-wrap"
+              isOpen={false}
+              customBurgerIcon={<img src={menusvg} alt="Menu" />}
+              right
+            >
+
+              <MenuMobile id="page-wrap" />
+            </BurgerMenu>
           </div>
         </Box>
-        {this.state.mobileActive && (
-          <MobileNav
-            toggleNav={this.toggleNav}
-            mobileStyle={mobileStyle}
-            logo={this.props.logoWhite}
-          >
-            <MenuMobile toggleNav={this.toggleNav} />
-          </MobileNav>
-        )}
+
       </nav>
     );
   }

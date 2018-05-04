@@ -5,6 +5,7 @@ import FaClockO from 'react-icons/lib/fa/clock-o'
 import FaMapPin from 'react-icons/lib/fa/map-pin'
 import FaTicket from 'react-icons/lib/fa/ticket'
 import faunIcon from '../assets/images/fitonlogo.png'
+import colors  from "../utils/colors"
 
 const SHOW_PAST_CONCERTS_FOR_N_DAYS = 2
 const MAX_NUM_CONCERTS = 5
@@ -34,19 +35,21 @@ const ConcertSection = ({ concerts }) => {
          return (
           <div key={concert.id} css="margin: 4px">
           <Link to={`/${concert.slug}`}>
-            <div style={{margin: '32px 8px'}}>
+            <div css="margin: 32px 0px;">
               <img
                 src={faunIcon}
                 alt="FITON"
                 width="50px"
               />
-              <h4>
-                   {`${concert.title}`}
-              </h4>
-              <div>
+              <div css={`margin: 8px 0px; color: ${colors.tech47pink};`}>
+                <h4>
+                     {`${concert.title}`}
+                </h4>
+              </div>
+              <div css="margin-bottom: 4px;">
                 <FaCalendar /> {dateTime ? `${dateTime.toLocaleDateString('en-GB')}` : ''}
               </div>
-              <div>
+              <div css="margin-bottom: 4px;">
                 <FaClockO /> {dateTime ? ` ${dateTime.toLocaleTimeString()}` : '...'}
               </div>
               <div>

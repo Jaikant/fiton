@@ -43,7 +43,43 @@ const MainDiv = styled.div`
   height: 400px;
 `;
 
-const Layout = ({ children, location, data }) => (
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    left: '36px',
+    top: '36px'
+  },
+  bmBurgerBars: {
+    background: '#373a47'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
+
+const Layout = ({ children, location, data }) => {
+ return (
   <MainDiv>
     <Helmet>
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
@@ -55,6 +91,7 @@ const Layout = ({ children, location, data }) => (
       logoWhite={data.logoWhite.resize.src}
       location={location}
     />
+
     <div css={css({
               minHeight: `calc(100% - 50px)`,
               [presets.Tablet]: {
@@ -62,11 +99,11 @@ const Layout = ({ children, location, data }) => (
               },
             })}
     >
-      {children()}
+    {children()}
     </div>
     <Footer title={data.site.siteMetadata.title} />
   </MainDiv>
-);
+)};
 
 Layout.propTypes = {
   children: PropTypes.func.isRequired,
@@ -101,7 +138,7 @@ export const query = graphql`
       }
     }
     logoWhite: imageSharp(id: { regex: "/fitonlogo/" }) {
-      resize(width: 743, height: 425, cropFocus: CENTER) {
+      resize(width: 743, cropFocus: CENTER) {
         # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
         src
       }

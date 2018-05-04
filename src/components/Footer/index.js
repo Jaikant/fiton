@@ -157,9 +157,9 @@ const Footer = props => (
         <div className="address">
           <p> <FaMapMarker /> No 10, 5, Kembathalli Main Rd, Gundappa Layout, Pillaganahalli, Bengaluru, Karnataka 560083</p>
           <p> <FaPhone /> 086188 68841 </p>
-          <a href="https://www.twitter.com"> <FaTwitterSquare css="color: white; margin: 0px 4px;" /> </a>
-          <a href="https://www.facebook.com"> <FaInstagram css="color: white; margin: 0px 4px;" /> </a>
-          <a href="https://www.instagram.com"> <FaFacebookSquare css="color: white; margin: 0px 4px;" /> </a>
+          <a href="https://www.twitter.com/"> <FaTwitterSquare css="color: white; margin: 0px 4px;" /> </a>
+          <a href="https://www.instagram.com/fitonsports/"> <FaInstagram css="color: white; margin: 0px 4px;" /> </a>
+          <a href="https://www.facebook.com/Fitonsports/"> <FaFacebookSquare css="color: white; margin: 0px 4px;" /> </a>
         </div>
         <div className="copyright">
           <p> Designed by  <a href="https://tech47.in" css={`color: ${colors.tech47date};`}>tech47.in</a> </p>
