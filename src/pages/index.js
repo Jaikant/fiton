@@ -87,8 +87,8 @@ const Index = ({ data, location, pathContext }) => {
       </Slider>
       <div className={blogTheme}>
         <Helmet
-          title={"Tech47 - Building for India"}
-          description={"Technology to power your startup."}
+          title={"FITON Sports"}
+          description={""}
           image={data.imageOne ? data.imageOne.resize.src : null}
           pathname={location.pathname}
         />

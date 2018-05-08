@@ -41,7 +41,7 @@ class MobileNav extends Component {
               className={logoClass}
               height={40}
               src={this.props.logo}
-              alt="Tech47 Logo"
+              alt="Logo"
             />
             <span className={deleteStyle}>
               <img src={close} height="32px" width="32px" alt="close" />

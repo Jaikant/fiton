@@ -438,7 +438,7 @@ class Navigation extends Component {
           height={40}
           align="left"
           src={this.props.logoWhite}
-          alt="Tech47 Logo"
+          alt="Logo"
           css="display: block;"
         />
         <br clear="all" />
@@ -478,7 +478,7 @@ class Navigation extends Component {
               className={logoClass}
               height={30}
               src={this.props.logoWhite}
-              alt="Tech47 Logo"
+              alt="Logo"
             />
           </Link>
           <Menu />
@@ -494,7 +494,7 @@ class Navigation extends Component {
               className={logoClass}
               height={40}
               src={this.props.logoWhite}
-              alt="Tech47 Logo"
+              alt="Logo"
             />
           </Link>
           <div id="outer-container" css="height: 100%;">

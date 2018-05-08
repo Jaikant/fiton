@@ -136,7 +136,7 @@ const Template = ({ data, pathContext }) => {
   return (
     <div>
           <Helmet>
-            <title> {`Tech47 - ${post.title}`} </title>
+            <title> {`FITON SPORTS - ${post.title}`} </title>
             <meta name="description" content={post.description.description} />
             <meta name="Keywords" content={keywords} />
             <meta property="og:title" content={post.title} />
