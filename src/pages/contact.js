@@ -210,8 +210,8 @@ class SimpleMap extends React.Component {
             layerTypes={['TrafficLayer']}
           >
             <AnyReactComponent
-              lat={12.864}
-              lng={77.55}
+              lat={12.8646}
+              lng={77.57}
               text='FITON SPORTS'
             />
           </GoogleMapReact>
