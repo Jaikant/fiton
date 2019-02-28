@@ -11579,9 +11579,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-quattrocento-sans@0.0.44:
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/typeface-quattrocento-sans/-/typeface-quattrocento-sans-0.0.44.tgz#40efbf9564dd612c9c8c5876ec99f9e9e5a3fdcb"
+typeface-quattrocento-sans@0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-quattrocento-sans/-/typeface-quattrocento-sans-0.0.72.tgz#563dd4790ec06122eefb8cbe76d3aab91dd7ca37"
 
 typeface-work-sans@0.0.44:
   version "0.0.44"
