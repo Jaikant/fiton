@@ -61,7 +61,7 @@ const ContactForm = () => (
   <div>
     <form
       css="max-width: 500px;"
-      action="//formspree.io/jaikant@gmail.com"
+      action="//formspree.io/fitonsports@gmail.com"
       method="POST"
     >
       <label className={label} htmlFor="name">
